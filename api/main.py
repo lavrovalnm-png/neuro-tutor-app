@@ -1,16 +1,6 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-
-app = FastAPI(title="NeuroTutor AI")
-
-class ChatRequest(BaseModel):
-subject: str
-message: str
+app = FastAPI()
 
 @app.get("/")
 async def root():
-return {"message": "Нейрорепетитор запущен!"}
-
-@app.post("/chat")
-async def chat_endpoint(request: ChatRequest):
-return {"response": f"Привет! Я твой репетитор по {request.subject}. Ты сказал: {request.message}"}
+return {"message": "Работает!"}
