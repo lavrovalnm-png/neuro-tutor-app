@@ -14,7 +14,3 @@ return {"message": "Нейрорепетитор запущен!"}
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
 return {"response": f"Привет! Я твой репетитор по {request.subject}. Ты сказал: {request.message}"}
-
-if __name__ == "__main__":
-import uvicorn
-uvicorn.run(app, host="0.0.0.0", port=8000)
